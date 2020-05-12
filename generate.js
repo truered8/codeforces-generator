@@ -4,9 +4,10 @@ const path = require('path');
 const fs = require('fs');
 
 const PROBLEMSET_URL = 'http://codeforces.com/problemset/problem'; // The URL to all problems
+const PROBLEM_DIR = '../'; // The path where every problem directory will be saved
 const TEMPLATE_PATH = './template.cpp'; // The path to the template file
-const TEMPLATE_NAME = 'template.cpp'; // The path to the 
-const SAMPLE_DIR_NAME = 'samples';
+const TEMPLATE_NAME = 'template.cpp'; // The name of the template created in each problem directory
+const SAMPLE_DIR_NAME = 'samples'; // The name of the test sample directory
 
 /** 
  * This function is used to get the HTML content of any webpage.
@@ -52,7 +53,7 @@ const getSamplesFromURL = async url => {
  */
 const createDirectoryFromName = async problemName => {
     const samples = await getSamplesFromURL(`${PROBLEMSET_URL}/${problemName.slice(0, -1)}/${problemName.slice(-1)}`);
-    const problemDirectory = path.join(__dirname, problemName)
+    const problemDirectory = path.join(PROBLEM_DIR, problemName)
     const sampleDirectory = path.join(problemDirectory, SAMPLE_DIR_NAME);
     !fs.existsSync(problemDirectory) && fs.mkdirSync(problemDirectory);
     !fs.existsSync(sampleDirectory) && fs.mkdirSync(sampleDirectory);
@@ -67,7 +68,8 @@ const createDirectoryFromName = async problemName => {
             samples[i].output
         );
     }
-    console.log(`Generated problem directory for problem ${process.argv[2]}!`);
+    console.log(`Generated problem directory for problem ${problemName}!`);
+    console.log(`You can find the test cases in ${sampleDirectory}.`)
 }
 
 if(process.argv.length < 3) {
