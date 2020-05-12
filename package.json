@@ -1,0 +1,21 @@
+{
+  "name": "problems",
+  "version": "1.0.0",
+  "description": "Codeforces problem bot",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Saptarshi Bhattacherya",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.2.2",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
