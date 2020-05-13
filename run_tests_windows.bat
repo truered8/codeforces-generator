@@ -33,6 +33,6 @@ if "{{SAMPLE_LEN}}"=="0" (
         ) else (
             echo Passed test %%i :^^D
         )
-        del {{TEMP_DIR_NAME}}\output%%~ni.txt
     )
+    rmdir /S /F /Q {{TEMP_DIR_NAME}}
 )
