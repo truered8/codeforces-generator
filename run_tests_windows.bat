@@ -34,5 +34,5 @@ if "{{SAMPLE_LEN}}"=="0" (
             echo Passed test %%i :^^D
         )
     )
-    rmdir /S /F /Q {{TEMP_DIR_NAME}}
+    rmdir /S /Q {{TEMP_DIR_NAME}}
 )
