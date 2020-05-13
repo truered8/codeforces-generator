@@ -6,7 +6,7 @@ This repository automatically generates a directory for solving a problem from [
 
 The repository currently only supports C++ on Windows.
 
-# Setup
+# Getting Started
 First, ensure that you have [`git`](https://git-scm.com/) and [`npm`](https://nodejs.org/en/) installed.
 Then, run the following commands:
 ``` batch
@@ -17,16 +17,16 @@ npm install
 
 # Usage
 ## Creating the Problem Directory
-1. Edit the required parameters in `generate.js`:
+1. Edit the required settings in `config.json`:
    * `PROBLEM_DIR`: The path where every problem directory will be saved
    * `TEMPLATE_PATH`: The path to the master template file
    * `SOLUTION_NAME`: The name of the template file created in each problem directory
    * `SAMPLE_DIR_NAME`: The name of the test sample directory
 2. Run the following command:
    ``` batch
-   node generate {problem names}
+   node generate {problem codes}
    ```
-    where {problem names} should be replaced with the name of each problem you wish to scrape. For example:
+    where {problem codes} should be replaced with the code of each problem you wish to scrape. For example:
     ``` batch
     node generate 158A 4A
     ```
@@ -35,9 +35,9 @@ npm install
 This should be performed after you have implemented your solution.
 1. Enter the directory that contains the problem:
    ``` batch
-   cd {PROBLEM_DIR}\{name of problem}
+   cd {PROBLEM_DIR}\{code of problem}
    ```
-   where {PROBLEM_DIR} should be replaced with the PROBLEM_DIR parameter previously configured and {name of problem} should be replaced with the name of the problem.
+   where {PROBLEM_DIR} should be replaced with the PROBLEM_DIR setting previously configured and {code of problem} should be replaced with the code of the problem.
 2. Run the batch file:
    ``` batch
    runtests_windows.bat
