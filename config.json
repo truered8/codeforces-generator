@@ -1,0 +1,7 @@
+{
+	"PROBLEM_DIR": "../",
+	"TEMPLATE_PATH": "./template.cpp",
+	"SOLUTION_NAME": "solution.cpp",
+	"SAMPLE_DIR_NAME": "samples",
+	"TEMP_DIR_NAME": "temp"
+}
