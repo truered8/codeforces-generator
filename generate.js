@@ -111,10 +111,10 @@ const generateProblemDirectory = async problemCode => {
 
 // If no problem names were provided
 if(process.argv.length < 3) {
-    console.log('Error: couldn\'t find problem name.')
+    console.log('Error: couldn\'t find problem code.')
     console.log('Please try running the script in the following format: ');
-    console.log(`node ${path.basename(__filename)} <problem name>`);
+    console.log(`node ${path.basename(__filename)} <problem code>`);
     process.exit(1);
 }
 
-for(problemCode of process.argv.slice(2)) generateProblemDirectory(problemCode);
+for(problemCode of process.argv.slice(2)) generateProblemDirectory(problemCode.toUpperCase());
