@@ -2,6 +2,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const path = require('path');
 const fs = require('fs');
+const chalk = require('chalk');
 const config = require('./config.json');
 
 /** The URL to all problems */
@@ -105,15 +106,15 @@ const generateProblemDirectory = async problemCode => {
     !fs.existsSync(templatePath) && fs.copyFileSync(TEMPLATE_PATH, templatePath, fs.constants.COPYFILE_EXCL);
     generateRunTests(problemDirectory, samples.length - 1);
     generateSamples(samples, sampleDirectory);
-    console.log(`Generated problem directory for problem ${problemCode}!`);
-    console.log(`You can find the test cases in ${sampleDirectory}.`)
+    console.log(chalk.green(`Generated problem directory for problem ${problemCode}!`));
+    console.log(chalk.green(`You can find the test cases in ${sampleDirectory}.`));
 }
 
 // If no problem names were provided
 if(process.argv.length < 3) {
-    console.log('Error: couldn\'t find problem code.')
-    console.log('Please try running the script in the following format: ');
-    console.log(`node ${path.basename(__filename)} <problem code>`);
+    console.log(chalk.red('Error: couldn\'t find problem code.'))
+    console.log(chalk.red('Please try running the script in the following format: '));
+    console.log(chalk.grey(`node ${path.basename(__filename)} <problem code>`));
     process.exit(1);
 }
 

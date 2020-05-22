@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #define print(x) cout << #x << ": " << x << endl
+#define nl "\n"
 
 using namespace std;
 typedef long long ll;
