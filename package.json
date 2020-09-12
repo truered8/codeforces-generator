@@ -14,7 +14,7 @@
     "cheerio": "^1.0.0-rc.3",
     "jquery": "^3.5.1",
     "jsdom": "^16.2.2",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
